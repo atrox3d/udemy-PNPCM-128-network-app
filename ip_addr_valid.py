@@ -30,9 +30,9 @@ def ip_addr_valid(iplist: list[str]):
             continue
 
         else:
-            print(f'\n* There was an invalid IP address in the file: {ip} :(\n')
+            print(f'\n* There was an invalid IP address in the file: {ip}')
             sys.exit()
 
 
 if __name__ == '__main__':
-    ip_addr_valid(['10.10.10.2'])
+    ip_addr_valid(['10.10.10.2', '169.254.0.0'])
