@@ -18,10 +18,13 @@ def ip_file_valid(ipfile_path=None) -> list[str]:
         print("please check and try again")
         sys.exit(1)
 
-    ipfile = open(ipfile_path)
-    ipfile.seek(0)
-    iplist = ipfile.readlines()
-    ipfile.close()
+    # open file and read data
+    with open(ipfile_path) as ipfile:
+        ipfile.seek(0)
+        iplist = ipfile.readlines()
+
+    # remove \n
+    iplist = list(map(str.rstrip, iplist))
 
     return iplist
 
